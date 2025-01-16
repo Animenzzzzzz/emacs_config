@@ -38,6 +38,8 @@
 
 (setq jit-lock-defer-time 0)
 
+(setq frame-title-format "Editing %f - Emacs")
+
 ;; Allow users to provide an optional "init-preload-local.el"
 (require 'init-preload-local nil t)
 
@@ -66,9 +68,11 @@
 
 (require 'init-markdown)
 (require 'init-paredit)
+(require 'init-c)
 (require 'init-lisp)
 (require 'init-rust)
 (require 'init-toml)
+(require 'init-yaml)
 
 (require 'init-folding)
 
@@ -83,6 +87,17 @@
 
 ;; Load built-in themes
 (load-theme 'leuven t)
+
+;; 启动 Emacs 服务器并使用 TCP/IP 和特定端口
+(require 'server)
+(unless (server-running-p)
+  (make-network-process :name "server"
+                        :service 5678  ;; 指定端口号
+                        :family 'ipv4
+                        :host "0.0.0.0"  ;; 监听所有网络接口
+                        :server t
+                        :filter 'server-accept-connection))
+
 
 (provide 'init)
 

@@ -73,6 +73,7 @@
 (require 'init-rust)
 (require 'init-toml)
 (require 'init-yaml)
+(require 'init-python)
 
 (require 'init-folding)
 

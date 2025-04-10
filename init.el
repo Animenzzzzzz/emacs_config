@@ -76,6 +76,7 @@
 (require 'init-python)
 
 (require 'init-folding)
+(require 'init-themes)
 
 ;; Extra packages which don't require any configuration
 
@@ -87,18 +88,7 @@
 (require 'init-locales)
 
 ;; Load built-in themes
-(load-theme 'leuven t)
-
-;; 启动 Emacs 服务器并使用 TCP/IP 和特定端口
-(require 'server)
-(unless (server-running-p)
-  (make-network-process :name "server"
-                        :service 5678  ;; 指定端口号
-                        :family 'ipv4
-                        :host "0.0.0.0"  ;; 监听所有网络接口
-                        :server t
-                        :filter 'server-accept-connection))
-
+;;(load-theme 'leuven t)
 
 (provide 'init)
 

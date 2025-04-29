@@ -51,6 +51,7 @@
 (require 'init-gui-frames)
 (require 'init-ibuffer)
 (require 'init-eglot)
+(require 'init-isearch)
 
 (require 'init-recentf)
 (require 'init-minibuffer)
